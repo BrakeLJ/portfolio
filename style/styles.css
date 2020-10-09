@@ -1,0 +1,82 @@
+/* Variables */
+:root {
+  --primary: ;
+  --secondary: ;
+  --accent: ;
+  --light: #fff;
+  --dark: #333;
+
+  --serif: 'PT Serif', serif;
+  --sans-serif: 'Work Sans', sans-serif;
+}
+
+/*=========================================
+General Styles
+=========================================*/
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body,p,h1,h2,ul,span,h3 {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: var(--sans-serif);
+  line-height: 1.4;
+  font-size: clamp(1.4rem, 2vw, 2rem);
+}
+
+.wrapper {
+  width: 85%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+/*=========================================
+Loading Animation
+=========================================*/
+
+
+/*=========================================
+Header Styles 
+=========================================*/
+
+.header {
+  background: ;
+}
+
+/*=========================================
+About Section
+=========================================*/
+
+/*=========================================
+Skills Section
+=========================================*/
+
+/*=========================================
+Portfolio Section
+=========================================*/
+
+/*=========================================
+Contact Section
+=========================================*/
+
+/*=========================================
+Footer Styles
+=========================================*/
