@@ -2,7 +2,7 @@
 :root {
   --primary: ;
   --secondary: ;
-  --accent: ;
+  --accent: magenta ;
   --light: #fff;
   --dark: #151515;
   --text-dark: #333;
@@ -45,6 +45,14 @@ body {
   margin: 0 auto;
 }
 
+.section {
+  padding: 50px 0px;
+}
+
+.section__heading {
+  margin-bottom: 20px;
+}
+
 img {
   width: 100%;
   height: auto;
@@ -67,6 +75,8 @@ a {
   margin-right: 10px;
 }
 
+
+
 /*=========================================
 Loading Animation
 =========================================*/
@@ -77,8 +87,9 @@ Header Styles
 =========================================*/
 
 .header {
+  position: relative;
   min-height: 100vh;
-  background: lavender;
+  background: url(../assets/blood-moon.jpg) no-repeat fixed center/cover;
 }
 
 /* #particles-js {
@@ -89,11 +100,21 @@ Header Styles
 } */
 
 .navigation {
-  background: var(--dark);
+  transition: all .5s;
+  z-index: ;
   padding: 25px 0px;
   position: fixed;
   right: 0;
   left: 0;
+}
+
+.nav__scroll {
+  background: var(--light);
+  box-shadow: 5px 3px 10px rgba(0, 0, 0, .1);
+}
+
+.nav__scroll.navigation a {
+  color: var(--dark);
 }
 
 .navigation__list {
@@ -111,12 +132,64 @@ Header Styles
   font-size: clamp(1rem, .8vw, 1.2rem);
   text-transform: uppercase;
 }
+
+.header__heading-container {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__main-heading {
+  border-right: 3px solid var(--dark);
+  color: var(--light);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+
+  animation: animated-main-heading 1.5s steps(29,end) 1s 1 normal both,
+    animated-cursor-stop 600ms steps(29,end) forwards;
+}
+
+.header__sub-heading {
+    border-right: 3px solid var(--dark);
+    color: var(--light);
+    white-space: nowrap;
+    overflow: hidden;
+
+    animation: animated-sub-heading 1.5s  steps(29,end) 2.5s 1 normal both,
+      animated-cursor-stop 600ms steps(29,end) 2.5s infinite;
+}
+
+@keyframes animated-main-heading{
+  from{width: 0;}
+  to{width: 62%;}
+}
+
+@keyframes animated-sub-heading{
+  from{width: 0;}
+  to{width: 102%;}
+}
+
+@keyframes animated-cursor-stop{
+  from{border-right-color: var(--dark);}
+  to{border-right-color: transparent;}
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 0;
+  color: var(--light);
+  font-size: 5rem;
+}
+
 /*=========================================
 About Section
 =========================================*/
 .about {
   min-height: 50vh;
-  padding: 50px 0px;
 }
 
 .about__container {
@@ -136,7 +209,7 @@ About Section
 }
 
 .section__text {
-  margin: 20px 0px 30px 0px;
+  margin-bottom: 30px;
 }
 
 
@@ -144,10 +217,39 @@ About Section
 Skills Section
 =========================================*/
 
+.skills {
+  background: lavender;
+}
+
+.skills__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills__gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.skills__icons {
+  font-size: 10rem;
+  margin: 0px 20px 0px 20px;
+  transition: transform .5s;
+
+}
+
+.skills__icons:hover {
+  transform: scale(1.2);
+}
 /*=========================================
 Portfolio Section
 =========================================*/
-
+.portfolio__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /*=========================================
 Contact Section
 =========================================*/
@@ -155,3 +257,25 @@ Contact Section
 /*=========================================
 Footer Styles
 =========================================*/
+
+.footer {
+  display: flex;
+  justify-content: center;
+  padding: 50px 0px;
+  background: var(--dark);
+}
+
+.socials {
+  display: flex;
+}
+
+.socials a {
+  margin: 0px 20px;
+  color: var(--light);
+  font-size: 3rem;
+}
+
+/*=========================================
+Media Queries 
+=========================================*/
+
