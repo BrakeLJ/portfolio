@@ -1,11 +1,13 @@
 /* Variables */
 :root {
+  --white: #fff;
+  --black: #000;
+  --text-dark: #333;
+  --light: #D6F7FF;
+  --dark: #011D28;
   --primary: ;
   --secondary: ;
-  --accent: magenta ;
-  --light: #fff;
-  --dark: #151515;
-  --text-dark: #333;
+  --accent: ;
 
   --serif: 'PT Serif', serif;
   --sans-serif: 'Work Sans', sans-serif;
@@ -28,7 +30,7 @@ body,p,h1,h2,ul,span,h3 {
 }
 
 body {
-  color: var(--text-dark);
+  color: var(--dark);
   line-height: 1.4;
   font-family: var(--sans-serif);
   font-size: clamp(1.4rem, 1.3vw, 1.8rem);
@@ -46,11 +48,12 @@ body {
 }
 
 .section {
-  padding: 50px 0px;
+  padding: 120px 0px;
 }
 
 .section__heading {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 img {
@@ -65,7 +68,7 @@ a {
 }
 
 .btn {
-  border: 1px solid black;
+  border: 1px solid var(--dark);
   padding: 15px 30px;
   font-family: var(--links);
   font-size: 1.6rem;
@@ -74,8 +77,6 @@ a {
 .btn__span {
   margin-right: 10px;
 }
-
-
 
 /*=========================================
 Loading Animation
@@ -101,7 +102,7 @@ Header Styles
 
 .navigation {
   transition: all .5s;
-  z-index: ;
+  z-index: 99;
   padding: 25px 0px;
   position: fixed;
   right: 0;
@@ -109,8 +110,8 @@ Header Styles
 }
 
 .nav__scroll {
-  background: var(--light);
-  box-shadow: 5px 3px 10px rgba(0, 0, 0, .1);
+  background: var(--white);
+  box-shadow: 5px 3px 10px rgba(0, 0, 0, .2);
 }
 
 .nav__scroll.navigation a {
@@ -124,7 +125,7 @@ Header Styles
 }
 
 .navigation__list a {
-  padding: 20px 0 20px 20px;
+  padding: 20px 10px;
   letter-spacing: 2px;
 
   color: var(--light);
@@ -144,22 +145,23 @@ Header Styles
 
 .header__main-heading {
   border-right: 3px solid var(--dark);
-  color: var(--light);
+  color: var(--white);
+  /* font-size: 8rem; */
   text-align: left;
   white-space: nowrap;
   overflow: hidden;
 
-  animation: animated-main-heading 1.5s steps(29,end) 1s 1 normal both,
+  animation: animated-main-heading 1s steps(29,end) 1s 1 normal both,
     animated-cursor-stop 600ms steps(29,end) forwards;
 }
 
 .header__sub-heading {
     border-right: 3px solid var(--dark);
-    color: var(--light);
+    color: var(--white);
     white-space: nowrap;
     overflow: hidden;
 
-    animation: animated-sub-heading 1.5s  steps(29,end) 2.5s 1 normal both,
+    animation: animated-sub-heading 1.25s  steps(29,end) 2.5s 1 normal both,
       animated-cursor-stop 600ms steps(29,end) 2.5s infinite;
 }
 
@@ -194,7 +196,7 @@ About Section
 
 .about__container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .about__img {
@@ -208,48 +210,89 @@ About Section
   justify-content: center;
 }
 
+.about__heading {
+  text-align: left;
+}
+
 .section__text {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
+}
+
+.btn-container {
+  margin-top: 30px;
 }
 
 
 /*=========================================
 Skills Section
 =========================================*/
-
 .skills {
-  background: lavender;
+  padding: 80px 0px;
 }
 
 .skills__container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  padding: 50px 0px;
+  background: var(--light);
+  box-shadow: 5px 3px 10px rgba(0, 0, 0, .2),
+              -5px -3px 10pc rgba(0, 0, 0, .2);
 }
 
 .skills__gallery {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .skills__icons {
-  font-size: 10rem;
-  margin: 0px 20px 0px 20px;
-  transition: transform .5s;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: calc(33.3% - 40px);
+  font-size: clamp(6rem, 10vw, 10rem);
+  margin: 20px;
 }
 
-.skills__icons:hover {
-  transform: scale(1.2);
+.skills__text {
+  font-size: 1.6rem;
+  text-align: center;
 }
+
 /*=========================================
 Portfolio Section
 =========================================*/
-.portfolio__container {
+
+.projects__container {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
+  border-bottom: 1px solid var(--black);
+}
+
+h4 {
+  border-bottom: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.projects img {
+  width: 40%;
+  border: 1px solid var(--black);
+  box-shadow: 5px 3px 10px rgba(0, 0, 0, .5),
+              -5px -3px 10pc rgba(0, 0, 0, .5);
+}
+
+.projects__text {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 55%;
 }
+
+.projects__text--right {
+  text-align: right;
+}
+
+
 /*=========================================
 Contact Section
 =========================================*/
@@ -278,4 +321,31 @@ Footer Styles
 /*=========================================
 Media Queries 
 =========================================*/
+@media(max-width: 1025px) {
 
+}
+
+@media(max-width: 769px) {
+
+
+}
+
+@media(max-width: 481px) {
+  /* .header {
+    position: relative;
+    
+  }
+  .navigation {
+    position: absolute;
+    background: black;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 800px;
+    left: -800px;
+  }
+  .navigation__list {
+    display: block;
+    
+  } */
+}

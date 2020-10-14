@@ -38,7 +38,7 @@
             <li class="navigation__active"><a href="#">Home</a></li>
             <li><a class="navigation__link" href="#about">About</a></li>
             <li><a class="navigation__link" href="#skills">Skills</a></li>
-            <li><a class="navigation__link" href="#portfolio">Portfolio</a></li>
+            <li><a class="navigation__link" href="#projects">Projects</a></li>
             <li><a class="navigation__link" href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -59,69 +59,145 @@
         <div class="about__container">
           <img class="about__img" src="./assets/plaid-front-1.jpg" alt="me wearing a grape plaid button up shirt">
           <div class="about__text-container">
-            <h2 class="section__heading">Hi, I'm Lucas</h2>
-            <!-- <h3 class="section__sub-heading">A little about me</h3> -->
-            <p class="section__text ">Kick ass and take names, thats the motto I live by! Thinking of hiring someone else? Fucking dare ya bro! Way to miss out on the oppurtunity to have the SICKEST bottom line this side of the Ottawa river. Seriously. Okay, so we know I bring a dope dev skill set but did you know that I've also been fishing before. WHOLE PACKAGE. When I'm not coding the best in fucking web experiences you can find me hangin at the produce market scoping some absolute 10/10 apples, but I don't buy em. Nah, I appreciate them. Just like I would appreciate if you'd  shit or get off the pot! Hire me already lol. You know me, I keep it 💯. Eat shit n' live homie!</p>
-            <!-- <p class="section__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit asperiores dignissimos voluptatibus impedit voluptas illo non autem vel minima dicta. Hic necessitatibus nihil fugit itaque in atque maiores optio odit.</p> -->
+            <h2 class="section__heading about__heading">Hi, I'm Lucas!</h2>
+            
+            <p class="section__text">
+              I am a dynamic, detail oriented front end web developer currently based in Toronto. I come from the food/retail industry
+              and have tons of experience working in and leading teams to success. I love writing clean, easy to understand code and
+              above all am a champion for accessibility on the internet. I have a deep curiosity for learning more about web
+              development and am excited to make an impact on the way people’s lives are affected by it.
+            </p>
+            <p class="section__text ">
+              If I’m not coding or digging into new web development concepts you can find me out on my bike, reading comics, playing
+              board games or just spending some QT with my pup!
+            </p>
+            <p class="section__text ">
+              I am excited to work in a collaborative environment where I can lend my skills to my team while also growing as a
+              developer
+            </p>
             <div class="btn-container">
               <a class="btn" href="./assets/lucas-brake-resume.pdf" download><span class="btn__span">Download CV</span><i class="far fa-file-pdf"></i></i></a>
-              <a href=""></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="skills section">
-      <div class="skills__container wrapper">
+    <section id="skills" class="skills wrapper">
+      <div class="skills__container ">
         <h2 class="section__heading">Skills</h2>
         <h3 class="section__sub-heading"></h3>
         <ul class="skills__gallery">
           <li class="skills__icons">
             <i class="devicon-html5-plain-wordmark colored"></i>
+            <span class="skills__text">HTML</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-css3-plain-wordmark colored"></i>
+            <span class="skills__text">CSS</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-sass-original colored"></i>
+            <span class="skills__text">SASS</span>
           </li>
           <li class="skills__icons">
             <i class="fas fa-universal-access"></i></i>
+            <span class="skills__text">Accessibility</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-javascript-plain colored"></i>
+            <span class="skills__text">JavaScript</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-jquery-plain-wordmark colored"></i>
+            <span class="skills__text">jQuery</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-react-original-wordmark colored"></i>
+            <span class="skills__text">React</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-vuejs-plain-wordmark"></i>
+            <span class="skills__text">Vue</span>
+          </li>
+          <li class="skills__icons">
+            <i class="fas fa-fire-alt"></i>
+            <span class="skills__text">Firebase</span>
+          </li>
+          <li class="skills__icons">
+            <i class="fas fa-mobile-alt"></i>
+            <span class="skills__text">Responsive Design</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-git-plain-wordmark colored"></i>
+            <span class="skills__text">Git</span>
           </li>
           <li class="skills__icons">
             <i class="devicon-github-plain-wordmark colored"></i>
+            <span class="skills__text">GitHub</span>
           </li>
         </ul>
       </div>
     </section>
 
-    <section id="portfolio" class="potfolio section">
+    
+    <section id="projects" class="projects section">
       <div class="wrapper">
-        <div class="portfolio__container">
-        <h2 class="section__heading">My work</h2>
-          
+        <h2 class="section__heading">Projects</h2>
+        <div class="projects__container">
+          <img  src="./assets/mkg-mixer.png" alt="soundboard project overtop of headphones image">
+          <div class="projects__text">
+            <h3>M.K.G. Mixer</h3>
+            <h4>HTML | SASS | JavaScript | jQuery</h4>
+            <p>
+              The M.K.G Mixer lets you create your own beats by cutting up samples of music and storing quarter beat snippets to each button for you to play.
+            </p>
+            <div class="btn-container">
+              <a class="btn" href="" ><span class="btn__span">GitHub</a>
+              <a class="btn" href=""><span class="btn__span">Live Project</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects__container">
+          <div class="projects__text projects__text--right">
+            <h3>Bottom Bin Cinema</h3>
+            <h4>HTML | SASS | JavaScript | jQuery | RESTful API</h4>
+            <p>
+              Need a movie to watch tonight? We've got you covered! Just pick a genre and a decade and Bottom Bin Cinema will return a random movie to watch with a rating 5/10 or lower. Created with <a href="">Connie Tsang</a> using pair programming.
+            </p>
+            <div class="btn-container">
+              <a class="btn" href=""><span class="btn__span">GitHub</a>
+              <a class="btn" href=""><span class="btn__span">Live Project</a>
+            </div>
+          </div>
+          <img src="./assets/bottom-bin.png" alt="">
+        </div>
+
+        <div class="projects__container">
+          <img src="./assets/karaoke.png" alt="">
+          <div class="projects__text">
+            <h3>Guess the Lyric</h3>
+            <h4>HTML | SASS | JavaScript | React | RESTful API</h4>
+            <p>
+              Search for your favorite karaoke song and get some practice by filling in the missing lyrics. Guess the Lyric was built in a group and required collaboration and strong communication between all members.
+            </p>
+            <div class="btn-container">
+              <a class="btn" href="" ><span class="btn__span">GitHub</a>
+              <a class="btn" href=""><span class="btn__span">Live Project</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- Footer  -->
   <footer id="footer" class="footer">
+    <div class="footer__contact">
+      <span><i class="fas fa-phone-alt"></i>(647)-808-7424</span>
+      <span><i class="fas fa-envelope-square"></i>lukejbrake@gmail.com</span>
+    </div>
     <ul class="socials">
         <li>
             <a href="https://twitter.com/Lucasbrake" target="_blank" rel="noopener noreferrer"
