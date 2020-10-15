@@ -27,6 +27,7 @@
 
 // }).scroll();​
 
+//Change navigation background when scrolling
 $(window).scroll(function() {
   const winScroll = $(window).scrollTop();
   if (winScroll > 800) {
@@ -36,8 +37,8 @@ $(window).scroll(function() {
   }
 })
 
-const scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
-console.log(scrollPos);
+// const scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
+// console.log(scrollPos);
 
 $(".navigation__bars").click(function(){
   $(".navigation__list").toggleClass("navigation__show");
