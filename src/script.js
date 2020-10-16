@@ -1,58 +1,77 @@
-
-
-//Change navigation background colour when scrolling
-// window.addEventListener('scroll', function () {
-//   const nav = document.querySelector('nav');
-//   const scrollPosition = window.scrollY > 0;
-//   nav.classList.toggle('nav__scroll', scrollPosition);
-// })
-
-// $(window).scroll(function() {
-//     const scroll = $(window).scrollTop();
-//     if (scroll > 0) {
-//         $('nav').addClass('nav__scroll');
-//         $('section').each(function(i) {
-//             if ($(this).position().top <= windscroll - 100) {
-//                 $('nav a.active').removeClass('active');
-//                 $('nav a').eq(i).addClass('active');
-//             }
-//         });
-
-//     } else {
-
-//         $('nav').removeClass('fixed');
-//         $('nav a.active').removeClass('active');
-//         $('nav a:first').addClass('active');
-//     }
-
-// }).scroll();​
-
-//Change navigation background when scrolling
-$(window).scroll(function() {
-  const winScroll = $(window).scrollTop();
-  if (winScroll > 800) {
-    $("nav").addClass("nav__scroll");
-  } else {
-    $("nav").removeClass("nav__scroll");
-  }
-})
-
-// const scrollPos = window.scrollY || window.scrollTop || document.getElementsByTagName("html")[0].scrollTop;
-// console.log(scrollPos);
-
-$(".navigation__bars").click(function(){
-  $(".navigation__list").toggleClass("navigation__show");
-});
-
-$(".navigation__link").click(function(){
-  $(".navigation__list").toggleClass("navigation__show");
-});
-
-$(".navigation__link a").click(function() {
-  $(".navigation__link a").removeClass("navigation__active");
-  $(this).addClass("navigation__active");
-})
-
+//Document ready 
 $(function(){
   
+  //Handles scroll position/nav appearance 
+  $(window).scroll(function() {
+    const winScroll = $(window).scrollTop() + 100;
+    const about = $('#about').offset().top;
+    const skills = $('#skills').offset().top;
+    const projects = $('#projects').offset().top;
+    const contact = $('#contact').offset().top;
+    
+    //Adds active class based on scroll position in document
+    if (winScroll < about) {
+      $(".navigation__home").addClass("navigation__active")
+      $(".navigation__about").removeClass("navigation__active")
+    }
+
+    if (winScroll >= about) {
+      $(".navigation__about").addClass("navigation__active")
+      $(".navigation__home").removeClass("navigation__active")
+    } else {
+      $(".navigation__about").removeClass("navigation__active")
+
+    };
+    if (winScroll >= skills) {
+      $(".navigation__skills").addClass("navigation__active")
+      $(".navigation__about").removeClass("navigation__active")
+    } else {
+      $(".navigation__skills").removeClass("navigation__active")
+    };
+
+    if (winScroll >= projects) {
+      $(".navigation__projects").addClass("navigation__active")
+      $(".navigation__skills").removeClass("navigation__active")
+    } else {
+      $(".navigation__projects").removeClass("navigation__active")
+    };
+
+    if (winScroll + 100 >= contact) {
+      $(".navigation__contact").addClass("navigation__active")
+      $(".navigation__projects").removeClass("navigation__active")
+    } else {
+      $(".navigation__contact").removeClass("navigation__active")
+    };
+
+    //Changes background of nav when positioned below header
+    if (winScroll >= about) {
+      $("nav").addClass("nav__scroll");
+    } else {
+      $("nav").removeClass("nav__scroll");
+    };
   });
+
+  //Adds active class to navigation link when clicked
+  $(".navigation__link a").click(function() {
+    $(".navigation__link a").removeClass("navigation__active");
+    $(this).addClass("navigation__active");
+  })
+
+  //toggles the nav bar for mobile view
+  $(".navigation__bars").click(function(){
+    $(".navigation__list").toggleClass("navigation__show");
+  });
+
+  $(".navigation__link").click(function(){
+    $(".navigation__list").toggleClass("navigation__show");
+    $(".bar1, .bar2, .bar3").toggleClass("change")
+  });
+
+  //Trigger animation for mobile menu
+  $(".navigation__bars").on("click", function() {
+    $(".bar1, .bar2, .bar3").toggleClass("change")
+  })
+  
+});
+
+

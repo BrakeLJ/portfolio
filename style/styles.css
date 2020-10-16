@@ -18,7 +18,7 @@ Other
   --accent: #FF7433;
 
   --body: 'Montserrat', sans-serif;
-  --heading: 'Work Sans', sans-serif;
+  --heading: 'Open Sans', sans-serif;
 }
 
 /*=========================================
@@ -154,6 +154,7 @@ a:focus {
 
 .navigation__skip:focus {
   left: 25%;
+  background: var(--accent);
 }
 
 /*=========================================
@@ -163,6 +164,7 @@ Header Styles
 .header {
   position: relative;
   min-height: 100vh;
+  background-color: var(--black);
   background: url(../assets/moon.jpg) no-repeat fixed center/cover;
 }
 
@@ -191,21 +193,8 @@ Header Styles
   transition: all .5s;
 }
 
-.navigation__bars {
-  display: none;
-  color: var(--light);
-  font-size: 4rem;
-}
-
-/* nav__scroll added with JS, changes nav background on scroll  */
-.nav__scroll {
-  box-shadow: 5px 3px 10px rgba(0, 0, 0, .2);
-  background: var(--white);
-}
-
-.nav__scroll.navigation a,
-.nav__scroll .navigation__bars {
-  color: var(--dark);
+.navigation__link {
+  padding: 10px 10px;
 }
 
 .navigation__list {
@@ -215,7 +204,7 @@ Header Styles
 }
 
 .navigation__list a {
-  padding: 10px 10px 10px 10px;
+  padding: 10px 0;
 
   color: var(--light);
 
@@ -228,13 +217,65 @@ Header Styles
   transition: border-bottom .2s;
 }
 
-.navigation__list a:hover {
+.navigation__list a:hover,
+.navigation__list a:focus {
   color: var(--accent);
 }
 
+/* Style for nav link that correlates to location on page */
 .navigation__active {
   border-bottom: 1px solid var(--accent);
 }
+
+/* hidden until mobile view  */
+.navigation__bars {
+  display: none;
+  padding: 10px 0px 0px 5px;
+}
+
+/* Hamburger menu  */
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background: var(--light);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Rotate bar1 */
+.bar1.change  {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px) ;
+  transform: rotate(-45deg) translate(-9px, 6px) ;
+}
+
+/* Fade out bar2 */
+.bar2.change  {
+  opacity: 0;
+}
+
+/* Rotate bar3 */
+.bar3.change  {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px) ;
+  transform: rotate(45deg) translate(-8px, -8px) ;
+}
+
+/* nav__scroll added with JS, changes nav background on scroll  */
+.nav__scroll {
+  box-shadow: 5px 3px 10px rgba(0, 0, 0, .2);
+  background: var(--white);
+}
+
+.nav__scroll.navigation a {
+  color: var(--dark);
+}
+
+.nav__scroll .bar1,
+.nav__scroll .bar2,
+.nav__scroll .bar3 {
+  background: var(--dark);
+}
+
+
 
 .header__heading-container {
   position: relative;
@@ -248,8 +289,6 @@ Header Styles
 }
 
 .header__main-heading {
-  border-right: 3px solid var(--dark);
-
   color: var(--light);
 
   font-size: 7rem; /*fallback*/
@@ -258,19 +297,15 @@ Header Styles
   white-space: nowrap;
 
   overflow: hidden;
-  animation: animated-main-heading 1s steps(29,end) 1s 1 normal both,
-    animated-cursor-stop 600ms steps(29,end) forwards;
+  animation: animated-main-heading 1s steps(29,end) 1s 1 normal both;
 }
 
 .header__sub-heading {
-  border-right: 3px solid var(--dark);
-
   color: var(--white);
 
   white-space: nowrap;
   overflow: hidden;
-  animation: animated-sub-heading 1.25s  steps(29,end) 2.5s 1 normal both,
-    animated-cursor-stop 600ms steps(29,end) 2.5s infinite;
+  animation: animated-sub-heading 1.25s  steps(29,end) 2.5s 1 normal both;
 }
 
 /* Typing and cursor animation  */
@@ -362,10 +397,12 @@ Skills Section
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
   width: calc(25% - 40px);
+  margin: 20px;
+
   font-size: 8rem; /*fallback*/
   font-size: clamp(6rem, 10vw, 10rem);
-  margin: 20px;
 }
 
 .skills__text {
@@ -380,15 +417,14 @@ Projects Section
 .projects__container {
   display: flex;
   justify-content: space-between;
+
   padding: 56px 0px;
-  /* margin-bottom: 50px; */
   border-bottom: 1px solid var(--dark);
 }
 
 .projects img {
   width: 40%;
   box-shadow: 2px 4px 15px rgba(0, 0, 0, .25);
-              
 }
 
 .projects__text {
@@ -400,7 +436,6 @@ Projects Section
 .projects__text--right {
   text-align: right;
 }
-
 
 /*=========================================
 Contact Section
@@ -432,14 +467,15 @@ fieldset {
 form {
   display: flex;
   flex-direction: column;
-  font-family: inherit;
 }
 
 input,
 textarea {
-  font-family: var(--sans-serif);
-  border: 1px solid var(--dark);
   margin-bottom: 20px;
+  border: 1px solid var(--dark);
+
+  font-family: var(--body);
+  
   resize: none;
 }
 
@@ -549,10 +585,6 @@ Media Queries
 }
 
 @media(max-width: 481px) {
-
-  /* .wrapper {
-    width: 100%;
-  } */
 
   .header {
     position: relative;
