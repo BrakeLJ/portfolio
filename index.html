@@ -76,6 +76,7 @@
         </a>
       </div>
   </header>
+  <script src="https://unpkg.com/vue@next"></script>
   
   <!---------- Main content ------------->
   <main id="main">
@@ -146,7 +147,7 @@
             <span class="skills__text">React</span>
           </li>
           <li class="skills__icons">
-            <i class="devicon-vuejs-plain-wordmark" aria-label="Vue.js icon"></i>
+            <i class="fab fa-vuejs" aria-label="Vue.js icon"></i>
             <span class="skills__text">Vue</span>
           </li>
           <li class="skills__icons">
@@ -264,12 +265,14 @@
           <div class="contact__text">
             <h3 class="section__sub-heading">Get in touch</h3>
             <p class="section__text">
-              If you have any questions about my work, want to schedule a meeting or just want to drop me a line to chat comics, feel free to to use this handy contact form 
+              If you have any questions about my work, want to schedule a meeting or just want to drop me a line to chat comics, feel free to to use this handy contact form. 
             </p>
             <p class="section__text">
               Alternatively, you can reach me at the following social media platforms.
             </p>
-            <a href="mailto:lukejbrake@gmail.com">lukejbrake@gmail.com</a>
+            <div class="email-container">
+              <a class="email" href="mailto:lukejbrake@gmail.com">lukejbrake@gmail.com</a>
+            </div>
             <ul class="socials">
               <li>
                 <a href="https://twitter.com/Lucasbrake" target="_blank" rel="noopener noreferrer" aria-label="visit me on twitter">
@@ -318,8 +321,7 @@
                 id="message" 
                 cols="30" 
                 rows="10" 
-                placeholder="Message">
-              </textarea>
+                placeholder="Message"></textarea>
 
               <div class="submit-container">
                 <button type="submit" class="btn">Submit</button>

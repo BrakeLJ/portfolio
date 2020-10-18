@@ -14,7 +14,7 @@ Other
   --black: #000;
   --light: #F0F5FA;
   --dark: #0F1F2E;
-  --secondary: #D1E0F0;
+  --secondary: #d1e0f0;
   --accent: #FF7433;
 
   --body: 'Montserrat', sans-serif;
@@ -164,8 +164,8 @@ Header Styles
 .header {
   position: relative;
   min-height: 100vh;
-  background-color: var(--black);
-  background: url(../assets/moon.jpg) no-repeat fixed center/cover;
+  background: var(--black);
+  background: url(../assets/moon.jpg) no-repeat scroll center/cover; 
 }
 
 .overlay {
@@ -194,6 +194,7 @@ Header Styles
 }
 
 .navigation__link {
+  position: relative;
   padding: 10px 10px;
 }
 
@@ -210,11 +211,11 @@ Header Styles
 
   letter-spacing: 2px;
   font-family: var(--heading);
-  font-size: 1.2rem; /*fallback*/
-  font-size: clamp(1rem, .8vw, 1.2rem);
+  font-size: 1.4rem; /*fallback*/
+  font-size: clamp(1.2rem, 1vw, 1.4rem);
   text-transform: uppercase;
 
-  transition: border-bottom .2s;
+  transition: all .2s;
 }
 
 .navigation__list a:hover,
@@ -223,8 +224,14 @@ Header Styles
 }
 
 /* Style for nav link that correlates to location on page */
-.navigation__active {
-  border-bottom: 1px solid var(--accent);
+.navigation__active::before {
+  content: '';
+  position: absolute;
+  background-color: var(--accent);
+  width: 50%;
+  height: 1px;
+  bottom: 8px;
+  left: 25%;
 }
 
 /* hidden until mobile view  */
@@ -275,8 +282,6 @@ Header Styles
   background: var(--dark);
 }
 
-
-
 .header__heading-container {
   position: relative;
 
@@ -291,7 +296,7 @@ Header Styles
 .header__main-heading {
   color: var(--light);
 
-  font-size: 7rem; /*fallback*/
+  font-size: 5rem; /*fallback*/
   font-size: clamp(5rem, 4.4vw, 7rem);
   text-align: left;
   white-space: nowrap;
@@ -376,12 +381,12 @@ Skills Section
 =========================================*/
 .skills {
   padding: 80px 0px;
-  background: url(../assets/skill-space2.jpg)no-repeat fixed center/cover;
+  background: url(../assets/skill-space2.jpg)no-repeat scroll center/cover;
 }
 
 .skills__container {
-  padding: 50px 0px;
-  background: var(--secondary);
+  padding: 30px 0px 100px 0px;
+  background: rgba(209, 224, 240, .8);
   box-shadow: 5px 3px 10px rgba(0, 0, 0, .1),
               -5px -3px 10pc rgba(0, 0, 0, .1);
 }
@@ -399,10 +404,14 @@ Skills Section
   align-items: center;
 
   width: calc(25% - 40px);
-  margin: 20px;
+  margin: 30px 0px;
 
   font-size: 8rem; /*fallback*/
   font-size: clamp(6rem, 10vw, 10rem);
+}
+
+.skills__icons i {
+  margin-bottom: 5px;
 }
 
 .skills__text {
@@ -418,7 +427,7 @@ Projects Section
   display: flex;
   justify-content: space-between;
 
-  padding: 56px 0px;
+  padding: 120px 0px;
   border-bottom: 1px solid var(--dark);
 }
 
@@ -457,6 +466,14 @@ Contact Section
 .contact__sub-heading {
   margin-bottom: 20px; /*fallback*/
   margin-bottom: clamp(15px, 1.8vw, 25px)
+}
+.email-container {
+  position: relative;
+}
+
+.email {
+  color: var(--accent);
+  font-weight: bold;
 }
 
 fieldset {
@@ -617,6 +634,16 @@ Media Queries
   .navigation__show {
     left: 0;
   }
+
+  .navigation__active::before {
+  content: '';
+  position: absolute;
+  background-color: var(--accent);
+  width: 10%;
+  height: 1px;
+  bottom: 15px;
+  left: 5px;
+}
 
   .about__img-container,
   .about__text-container {

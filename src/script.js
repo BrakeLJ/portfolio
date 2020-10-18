@@ -51,12 +51,6 @@ $(function(){
     };
   });
 
-  //Adds active class to navigation link when clicked
-  $(".navigation__link a").click(function() {
-    $(".navigation__link a").removeClass("navigation__active");
-    $(this).addClass("navigation__active");
-  })
-
   //toggles the nav bar for mobile view
   $(".navigation__bars").click(function(){
     $(".navigation__list").toggleClass("navigation__show");
@@ -71,7 +65,7 @@ $(function(){
   $(".navigation__bars").on("click", function() {
     $(".bar1, .bar2, .bar3").toggleClass("change")
   })
-  
+
 });
 
 
