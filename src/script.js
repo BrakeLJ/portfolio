@@ -1,6 +1,7 @@
 //Document ready 
 $(function(){
   
+  AOS.init();
   //Handles scroll position/nav appearance 
   $(window).scroll(function() {
     const winScroll = $(window).scrollTop() + 100;

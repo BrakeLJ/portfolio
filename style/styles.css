@@ -486,9 +486,11 @@ form {
   flex-direction: column;
 }
 
+
 input,
 textarea {
   margin-bottom: 20px;
+  padding: 8px 5px;
   border: 1px solid var(--dark);
 
   font-family: var(--body);
